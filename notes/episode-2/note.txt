@@ -1,0 +1,91 @@
+Episode - 2
+=============================
+while developing react application we need to install many packages and libraries using npm
+
+npm
+----------------
+It is not a node package manager.
+It is everything
+all the packages are hosted in npm repository.
+whaterver package we want we need to install.
+
+Initialize the package manager
+npm init
+it creates package.json based on given inputs
+package.json is the configuration for npm
+
+
+* Most important package is bundler.
+
+bundler
+-----------------
+whole code needs to be
+* Bundeled together
+* minified
+* cached
+* compressed
+ before it need to be sent to production.
+
+bundlers are webpack,Babel, parcel, and so on.
+
+parcel
+--------------------
+It make production code ready by doing all the bundler stuff mentioned above.
+npm install -D parcel
+
+there are two dependencies we install normally
+* Dev dependeny
+* Normal dependeny
+
+since "parcel" is used for production so we install parcel as dev dependeny.
+
+After installing a package a version is shown with '^'-> caret or '~'-> tilde 
+caret means it automatically updates the minor version
+tilde means it automatically updates the major version
+npx parcel index.html
+now our app is running in localhost:1234
+npm -> to install a package
+npx -> to execute a package
+
+parcel automatically refresh the web page when we change the code in editor.
+- Dev build
+- Local server
+- XMR - Hot Reloading Replacement
+- File watching algorithm (developed in c++)
+- Faster builds using caching
+- Image optimization
+- File minifaction
+- Bundling
+- Compress
+- Content Hashing
+- Code splitting
+- Differential Bundling (Older browser support)
+- Diagnostics
+- Error Handling
+- It also supports https
+- Tree shaking (remove unused code)
+- Different dev and production build
+
+* When we do npx parcel build index.html we need to remove main:App.js from package.json else we get conflicts and error
+* When we make "npx parcel build index.html" for production build it will create production build ready files and stores in dist folder.
+web: https://parceljs.org
+
+package-lock.json
+------------------------
+It keeps track the exact version of the package that is being installed.
+
+Node Modules
+------------------------
+It fetches all the code of a particular package and puts in node_modules folder.
+Transitive dependency -> our project is dependent on 'parcel', this parcel is dependenent on other dependencies.
+
+
+* Initially we created react using cdn links in index.html file this approach is not correct.
+* correct approach is to install react package using npm.
+
+
+
+Browserslist
+----------------
+By using parcel we can make our app supoort to old browsers.
+* In the package.json we can mention for which broswers it should work.

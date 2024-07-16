@@ -1,11 +1,27 @@
-// const heading = React.createElement('h1',{id:'heading'},"Hello Thimma") // second param is the object of attributes like id, classname and title for the heading
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(heading);
-import React from 'react';
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const parent = React.createElement('div', { id: 'parent' }, [React.createElement('h1', { id: "child" }, "hello world"), React.createElement('h2', { id: "child" }, "hello world")]);
+// Babel Transpiles it to React.createElement => ReactElement-js => HTMLElement(render)
+// const heading = <h1 className="heading">Hello world! from Thimma New</h1>;
 
+const span = <h1>This is span tag</h1>;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(parent);
+const Title = () => (
+    <div>
+      <h1 className="title">This is Heading</h1>
+    </div>
+  )
+const HeadingComponent = () => {
+  return (
+    <div className="container">
+       {Title()} {/* since it is function we can call like this  */}
+      <Title />
+      <Title></Title>
+      <h1>This is Heading Component</h1>
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent />);

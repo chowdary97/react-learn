@@ -1,0 +1,82 @@
+Episode - 3
+---------------------------
+creating a script to run code
+* package.json file create a script to build app.
+* "start":"parcel index.html" // to build of dev 
+" "build":"parcel build index.html" // to build for production ready
+
+
+Foundation to React
+-----------------------
+* React Element -> React Elements are equivalent to DOM elements. React Elements are Objects, when we render the element into DOM then it becomes HTML element.
+   ex: const heading = React.createElement("h1",{id:"heading"},"Hello world!");
+
+   const heading = React.createElement("h1", { id: "heading" }, "Hello world! from Thimma");
+   const root = ReactDOM.createRoot(document.getElementById('root'));
+   root.render(heading);
+
+To write this in react it is difficult to write and read as well.
+To make it is Facebook developers developed something known as "JSX" 
+
+JSX (JavaScript XML) 
+--------------------------
+* JSX is not HTML inside JavaScript, It is HTML like syntax.
+const jsxHeading = <h1 id="heading" >This is H1 tag </h1>
+* This is not a proper JavaScript code.
+* The JSX code is transpiled before it reaches to the js engine using (parcel -> Babel) or anyother bundler.
+* Babel is the transpiler, this is being used by the parcel to transpile the code.
+* All the attributes must be in camel case.
+  ex: class -> className,  tab -> tabIndex
+
+  single Line
+  ------------
+  <h1 className="head" >This is Thimma</h1>
+
+  Multiple lines
+  ---------------
+  (<h1 className="head" >
+  This is Thimma
+  </h1>)
+
+Babel
+-----------------
+* It is the Js compiler
+* It takes the jsx and converts it into the code that js engine understands.
+
+
+web: https://babeljs.io
+
+React Element
+-----------------
+const heading = (
+    <h1>This is heading tag </h1>
+)
+
+
+React Component
+-------------------
+* In React everything is a component. We have different components
+   1. Class Based Components //old
+   2. Functional Components //new
+* Always component name first letter should be in capital letter.
+  ex: const HeadingComponent =>{
+    return <h1>Heading</h1>
+  }
+
+* A function which is returning a jsx element is functional component.
+* We can a function inside jsx
+  ex: function Test(){
+    return <h1>Test</h1>
+  }
+
+   const HeadingComponent = ()=>{
+    return <div>
+    {Test()}
+    <h5>Heading</h5>
+    </div>
+   }
+
+
+Component Composition
+-------------------------------
+Writing a component inside in a component is called component composition.

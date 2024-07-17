@@ -1,15 +1,11 @@
-import React from "react";
 import "./header.css";
+import { LOGO_URL } from "../utils/constants";
 
-function Header() {
+export function Header() {
   return (
     <div className="header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://marketplace.canva.com/EAF1XAgJrCg/1/0/1600w/canva-white-brown-simple-restaurant-logo-koIA1HEug0Q.jpg"
-          alt="Restaurant Logo"
-        />
+        <img className="logo" src={LOGO_URL} alt="Restaurant Logo" />
       </div>
       <div className="nav-container">
         <ul className="nav-list">

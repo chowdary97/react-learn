@@ -1,0 +1,84 @@
+Episode-5
+=========================
+Everything that can be done with react is done with html,css and javascript.
+But we use libraries(react,angular etc) makes developer life easier.
+  These make coding fast 
+  optimizes performance.
+
+* We create a 'src' folder to keep all the source code as for the convention.
+* There is no proper approach to structure the folders in react app. It is not necessary to this, but to make developer life easy we need to structure.
+* Eventhoug the folder are structured in a proper way, the bundler(parcel, webpack) they optimize the code and move the code into single file.
+
+
+Folder structure
+--------------------
+src
+  |
+  components(this contains all the components)
+  |
+  utils(this contains all the utils like links, images etc.)
+  |
+  constants(all the global links are kept in constants)
+  |
+
+Utils
+--------------
+All the common links that are available for our application should be kept in utils folder
+
+
+
+export
+-----------------
+export can be done in two ways
+1. default 
+     export default anyname
+
+2. named export
+     export const LOGO_URL = 'https://iamge.com/123"
+
+
+
+
+Filtering is done for restaurants using filter.
+
+React Hooks
+-----------------------
+* React hook is normal js function which is given by react.
+* To sync between variable and ui in react we need to use useState hook, whenever there is a change in the useState hook that will render the ui
+
+State variable
+------------------
+this useState variable makes sync with the ui.
+this is known as render.
+whenever state variable updates react rerender the component.
+the logic of updating ui is rerendering.
+
+Reconciliation
+-------------------
+The Algorithm which uses diff one to another to determine which parts need to be changed.
+Reconciliation is the process of effecentily updating the DOM whenever there is change in the props or state.
+this uses Diff Algorithm.
+
+
+* React uses Reconciliation Algorithm which is also known as React Fibre.
+  ex:
+     if a container have 10 cards  => that filters to 3 cards
+
+* Virtual DOM is representation of Actual DOM or Real DOM.
+* Virtual DOM is basically object. that contains all the React elements.
+* Diff Algo => It finds the difference between the updated Virtual DOM and Previous Virtual DOM and updates the Real DOM.
+* Finding out the difference between two html codes is slower than finding the difference between the javascript objects.
+
+web: https://github.com/acdlite/react-fiber-architecture
+
+Array Destructuring
+-----------------------
+const [data,setData] = useState();
+
+let arr = useState();
+const [data,setData] = arr;
+
+const data = arr[0];
+const setData = arr[1];
+
+all these are same this is just Destructuring of array.

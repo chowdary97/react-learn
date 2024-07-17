@@ -1,8 +1,6 @@
-import React from "react";
 import "./RestrauntCard.css";
 
 function RestrauntCard({ data }) {
-  console.log(data);
   return (
     <div className="rest-card">
       <img className="res-img" src={data.Image} alt="res-logo" />

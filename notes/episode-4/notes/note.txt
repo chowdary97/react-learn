@@ -1,0 +1,34 @@
+Episode-4
+-----------------
+Crating any application we need to have proper plan.
+
+creating a swiggy application.
+
+we taled about creating a swiggy application
+we talked about creating components like restrauntcard
+passing dynamic data to the card as props
+talked about destructring of props
+
+
+* Added Json Viewer to chrome extension
+
+Config Driven UI
+----------------------------
+Front UI is driven by config from backend
+* data is the config
+* based on the data from we show UI
+  ex: data is different for different locations
+      for suppose if theere is carousal data we show carousal banner and data init otherwise we dont't show the carousal banner
+* When we build large applications we put images in cdn ex: cloudinary
+
+
+* Good practice for coding is destructre the object in child component 
+
+KEYS
+----------------
+* Keys are very important when iterate over array in react
+* to optimize the application we need to put key in a list 
+* if we don't use key it will remove entire list from dom and rerenders the list.
+* instead of rerendring entire list to optimize the application we just need to rerenders the elements only that have data changed or new item came in.
+
+* for good practive don't use index as key it is the last priority to use index as key.

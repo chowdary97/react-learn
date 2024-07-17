@@ -1,0 +1,17 @@
+.rest-card{
+    width: 200px;
+    height: 300px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin: 5px;
+
+}
+.rest-card:hover{
+    border:1px solid black;
+    cursor: pointer;
+}
+
+.res-img{
+    width: 100%;
+    height: 40%;
+}

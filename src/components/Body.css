@@ -1,0 +1,8 @@
+.search{
+    padding:10px
+}
+
+.restraunt-container{
+    display: flex;
+    flex-wrap: wrap;
+}

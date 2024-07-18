@@ -1,0 +1,47 @@
+Episode-6 -> Explore the world
+==================================
+
+Architecutes
+------------------------
+1. Monolith (Combining all services like Ui, Api, Auth, Db at one place )
+2. Microservice (Every service (ui,api,notifications,auth, database etc.) is a different service is not included in the same project)
+   |
+   -> React project is a ui servie in Microservice.
+   -> Each service is host with different ports in server that will be accesed with ip address and that particular port.
+
+
+
+Api Integration
+---------------------
+This api integration can be done in two ways.
+load page -> call api -> Render Response
+load page -> Render Skeleton -> Api -> ReRender (Better ux)
+
+
+UseEffect Hook
+--------------------
+It takes two arguments
+useEffect(()=>{},[])   // first argument is callback function and second argument is dependency array.
+* Call back function is called when render cycle is finished.
+* When we try to make api request to swiggy servers we get cors error, to bypass we the cors we need to use extension from web(Access-control-allow-origin)
+
+
+Optional Chaining
+------------------------
+checking the data from an object
+ 
+ ex: data?.list[0]?.cards
+
+
+ Shimmer Ui
+ -------------------
+ Shimmer ui is fake ui until we get response from api we show skeleton (fake cards in ui).
+
+
+
+
+const [user,setUser]=useState({})
+
+eventhough user is defined with constant that can be updated by setUser which is not a js priciple,
+but when we set setUser this Reconciliation will re run the entire component and assign it as new varibale
+

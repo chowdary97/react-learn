@@ -1,0 +1,53 @@
+Episode-7
+========================
+
+
+// the callback function is called evertime it rerenders
+useEffect(()=>{})
+
+// the callback function is called only once after the render
+useEffect(()=>{},[])
+
+
+// the callback function is called everytime the btn value changes. this is dependency array it may have multiple variables. atleast one varibale changed the callback function is called.
+useEffect(()=>{},[btn])
+
+
+
+* Never create useState variables outside the function in a component.
+* State variables are ment to write only in main component function level not in child function or condition.
+
+
+Routing In React Application (React Router Dom library) 
+--------------------------------------------------------------
+npm install react-router-dom
+web: https://reactrouter.com/en/main
+
+createBrowserRouter to create a router configuration and we pass.
+
+useRouteError
+---------------------
+* It is a hook from react-router-dom.
+* It gives us the specific error details.
+
+ex:   const err = useRouteError();
+      o/p : {
+    "status": 404,
+    "statusText": "Not Found",
+    "internal": true,
+    "data": "Error: No route matches URL \"/dfd\"",
+    "error": {}
+}
+
+
+* If we want to put header or footer or anyother part same for all the routes we must use children in path object and pass what are all the children that should show along with the common component.
+* If we want to navigate by using anchor tag <a href="http://" target="_blank">about</a>
+* But if we use anchor tag it reloads the enite page
+* withiout reloading entire page after navigating to new page we need to use Link component from react-router-dom
+   ex: <Link to="contact">Contact</Link>
+
+Two types of Routing
+------------------------
+1. Client Side Routing -> we no need to make api call while routing between the pages.
+2. Server Side Routing -> Making an api call to server, fetching data from server and rendering the data.
+

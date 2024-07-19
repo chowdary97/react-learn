@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { RestrauntCard } from "../components";
 import "./Body.css";
 import { Shimmer } from "../components";
+import { Link } from "react-router-dom";
 
 function Body() {
-  const [originalList,setOriginalList]=useState([])
+  const [originalList, setOriginalList] = useState([]);
   const [filteredList, setFilteredList] = useState(originalList);
   const [searchText, setSearchText] = useState("");
   function onButtonClick() {
@@ -20,7 +21,7 @@ function Body() {
       item.RestrauntName.toLowerCase().includes(searchText)
     );
     setFilteredList(filteredData);
-    if(searchText.length == 0){
+    if (searchText.length == 0) {
       setFilteredList(originalList);
     }
   }, [searchText]);
@@ -42,6 +43,7 @@ function Body() {
         restaurants.forEach((restaurant) => {
           const info = restaurant.info;
           let obj = {
+            id: info.id,
             RestrauntName: info.name,
             Location: info.Location,
             Rating: info.avgRating,
@@ -53,8 +55,9 @@ function Body() {
         });
       }
     });
-    // setFilteredList(restaurantsList);
-    setOriginalList(restaurantsList)
+
+    setFilteredList(restaurantsList);
+    setOriginalList(restaurantsList);
   }
 
   return filteredList.length === 0 ? (
@@ -79,7 +82,9 @@ function Body() {
       </div>
       <div className="restraunt-container">
         {filteredList.map((item, index) => (
-          <RestrauntCard key={index} data={item} />
+          <Link to={"/restaurant/" + item.id} key={item.id}>
+            <RestrauntCard data={item} />
+          </Link>
         ))}
       </div>
     </div>

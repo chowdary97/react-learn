@@ -1,0 +1,7 @@
+Optimization
+================================
+Optimization is the way of render the react application as soon as possible with the possible data.
+we have so many techniques to optimize
+ 1. Reconsilication -> Which refers to diff algo where the difference between dom is calculated and updating the new dom based on old dom without affetcing the not changed elements
+ 2. React Router -> while navigating between the routes we use some common components in entire application like head, footer those should not be rerender everytime application refreshed
+                    for that we use "LINK" component in react-router-dom to refresh only the particular component without refreshing the entire component.

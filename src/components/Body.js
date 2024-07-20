@@ -3,11 +3,14 @@ import { RestrauntCard } from "../components";
 import "./Body.css";
 import { Shimmer } from "../components";
 import { Link } from "react-router-dom";
+import useOnlineStatus from '../utils/hooks/useOnlineStatus';
 
 function Body() {
   const [originalList, setOriginalList] = useState([]);
   const [filteredList, setFilteredList] = useState(originalList);
   const [searchText, setSearchText] = useState("");
+
+  const onlineStatus = useOnlineStatus()
   function onButtonClick() {
     setFilteredList(data.filter((item) => item.Rating == 1));
   }
@@ -59,6 +62,8 @@ function Body() {
     setFilteredList(restaurantsList);
     setOriginalList(restaurantsList);
   }
+
+  if(!onlineStatus) return <h1>It looks like your offline, Please check your Internet connection</h1>
 
   return filteredList.length === 0 ? (
     <Shimmer />

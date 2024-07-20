@@ -21,6 +21,9 @@ export function Header() {
             <Link to="/menu">Menu</Link>
           </li>
           <li className="nav-item">
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li className="nav-item">
             <Link to="/cart">Cart</Link>
           </li>
         </ul>

@@ -4,27 +4,21 @@ import { useEffect, useState } from "react";
 import Shimmer from "../../components/Shimmer";
 import { useParams } from "react-router-dom";
 import { SWIGGY_MENU_ITEM_LINK } from "../../utils/constants";
+import useRestaurantMenu from "../../utils/hooks/useRestaurantMenu";
 
 const Restaurant = () => {
   const [data, setData] = useState(null);
   const [menuItems, setMenuItems] = useState([]);
   const { id } = useParams();
-  console.log(id);
-  useEffect(() => {
-    fetchData(id);
-  }, []);
+  const resInfo = useRestaurantMenu(id);
 
-  function fetchData() {
-    fetch(SWIGGY_MENU_ITEM_LINK+id)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data.data.cards[2].card.card.info);
-        setMenuItems(data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards);
-        console.log(data.data);
-        // setMenuItems(data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[6].card.card.itemCards);
-        // data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[6].card.card.itemCards[0].card.info
-      });
-  }
+  useEffect(() => {
+    if (resInfo) {
+      setData(resInfo.CardsInfo);
+      setMenuItems(resInfo.MenuInfo);
+    }
+  }, [resInfo]);
+
   return data == null ? (
     <Shimmer />
   ) : (
@@ -33,8 +27,8 @@ const Restaurant = () => {
       <h2>Menu</h2>
       <h3>Rating : {data.avgRating}</h3>
       <ul>
-        {menuItems.map((menuItem) => (
-          <li>{menuItem?.card?.card?.title}</li>
+        {menuItems.map((menuItem, index) => (
+          <li key={index}>{menuItem?.card?.card?.title}</li>
         ))}
       </ul>
     </div>

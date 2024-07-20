@@ -1,0 +1,44 @@
+Episode-9
+==================
+Single Responsibility principal
+-------------------------------------
+* Having a single identity to a function is a single Responsibility
+  Ex: Header.js  showing header in entire application is a single responsibility
+      Footer.js showing footer in entire application is a single responsibility
+      Body.js showing body in entire application is a single responsibility
+* It helps un maintain the code in a modularity.
+* It will more maitainable and more testable.
+
+
+Custom Hook
+---------------------
+* Hooks are basically normal java scripts functions which has a special responsibility to handle a useCase.
+* These hookds are given by react
+* Now we can create our own custom hook.
+* by creating a custom hook code is optimized.
+* Hooks are nothing but normal utility functions.
+* While creating a hook it is recommend to use "use" word before any name
+  ex: useOnlineStatus()
+
+
+Optimizing the Large Scale apps
+------------------------------------
+making the large scale apps to be broken down to small
+ * Chunking
+ * Code Splitting
+ * Dynamic Bundling
+ * all these are same 
+ * for suppose if we take makemytrip application we chunk the bundles like below
+   ex: Flight booking one bundle,
+       Hotels one bundle
+       Trains
+       Buses etc...
+* Now we have created a grocery screen 
+  we need to bundle seperatly so that we can optimize the app.
+  * to implement this functionality we need to implement lazy loading.
+  * Initially we will not load directly we need to load it on demand.
+    Implementaion example : const Grocery = lazy(()=>import("../screens/grocery/Grocery.js))
+
+    lazy -> lazy is the component that comes from react 
+    Suspense -> we need to add Suspense from react.
+    fallback -> when we call a page until it loads a component until then we can fallback to a particular component -> main component

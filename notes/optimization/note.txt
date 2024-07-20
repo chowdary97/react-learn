@@ -9,3 +9,9 @@ we have so many techniques to optimize
                                          the commit phase will be batch together for sibling children
                                          Ex: for suppose if we have two sibling components after calling constructor, render
                                          and children constructo, render and componentDidMount of the children is done at a time
+4. creating a custom hook -> It makes out application more optimized.   
+5. optimizing the app using
+    1. Chunking
+    2. Code Splitting
+    3. Dynamic Bundling.
+    * we need to use lazy, suspense to implement this.                                    

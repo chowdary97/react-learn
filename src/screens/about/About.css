@@ -1,8 +1,13 @@
 .about-container{
     padding: 0;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .aabout-title{
     font-size: 20px;
+}
+
+.user-cards{
+    display: flex;
+    justify-content: space-between;
 }

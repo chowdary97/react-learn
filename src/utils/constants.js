@@ -6,3 +6,5 @@ export const CLOUDINARY_IMAGE_URL =
 
 export const SWIGGY_MENU_ITEM_LINK =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.37240&lng=78.43780&restaurantId=";
+
+export const GITHUB_URL = "https://api.github.com/users/chowdary97"

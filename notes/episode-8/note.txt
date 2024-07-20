@@ -1,0 +1,88 @@
+Episode-8
+========================
+Class Based Components
+we access props in class based Components using constructor
+ ex: constructor(props){
+    super(props)
+ }
+
+ we need to call using this keyword
+   ex: this.props
+
+* All props passed through Components is combined into single object and sent through props name
+
+
+Super()
+-----------------------
+// write notes regarding this here
+
+
+Creating State Variables in Class Based Components
+------------------------------------------------------
+* State is created when class instance is instantiated.
+* this.state ={
+    count:0,
+    count2:0
+}
+
+
+* we can't update state Variables directly in class based Components
+  we need to use this.setState() to update the state variables
+  ex: this.setState({count:this.state.count +1})
+* Multiple state variables updating at a time
+  ex: this.setState({count:this.state.count,count2:this.state.count2 +1})
+
+
+Life Cycle Methods
+---------------------------
+    Mounting
+    --------------
+    * Whenever a component is mounter constructor is called first and render is called
+    * componentDidMount() this is called after constructor, render 
+    * once the component has been mounted then only parent componentDidMount() is called. 
+    * child life cycle has to complete before calling the parent componentDidMount()
+    * In Functional component we use useEffect hook and also we add dependency array.
+    * React Life cycle link : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+    * Batch all the children -> the commit phase will be batch together for sibling children
+                              Ex: for suppose if we have two sibling components after calling constructor, render
+                                  and children constructo, render and componentDidMount of the children is done at a time
+   
+    updating
+    ------------------
+    * On update setState variables it updates that means it calls render method again 
+    * React updates to dom html is loaded
+    * on update componentDidUpdate is called.
+
+    UnMounting
+    ------------------
+    * Unmounting means disabling the ui component.
+    * componentWillUnmount is called when the component is unmounted.
+    * the main problem with singe page applications like react when we put a interval timer for everysecond, 
+    * eventhough you change the page still the timer execute because it is single page
+    * again if you go to the same component it again prints in interval with twice the interval 
+    * In componentWillUnmount we need to clear interval.
+    * for reference check namaste react episode-8 at last 20 mins.
+
+
+    UnMounting in Functional Components
+    ------------------------------------
+    useEffect(()=>{
+
+    let timer = setInterval(()=>{
+        console.log("Interval)
+    },1000)
+
+     return ()=>{
+     clearInterval(timer)
+     }   // this callback function is called once the component is unmounted
+    },[])
+
+
+async componentDidMount()
+-------------------------------
+make notes why we cant write async operations in componentDidMount
+
+
+Disclamier
+-----------------
+Never compare lifecycle methods in class based components to useEffect hook.

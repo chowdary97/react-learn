@@ -5,3 +5,7 @@ we have so many techniques to optimize
  1. Reconsilication -> Which refers to diff algo where the difference between dom is calculated and updating the new dom based on old dom without affetcing the not changed elements
  2. React Router -> while navigating between the routes we use some common components in entire application like head, footer those should not be rerender everytime application refreshed
                     for that we use "LINK" component in react-router-dom to refresh only the particular component without refreshing the entire component.
+ 3. Batch all the children Components -> dom updating is done at a time for all the children before componentDidMount is called to optimize the performance.
+                                         the commit phase will be batch together for sibling children
+                                         Ex: for suppose if we have two sibling components after calling constructor, render
+                                         and children constructo, render and componentDidMount of the children is done at a time

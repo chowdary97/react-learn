@@ -1,0 +1,27 @@
+Episode-10
+======================
+Css library Integration
+css types are two types sass or scss but it is not recommended way.
+we use tailwind css to implement css in our application.
+Material ui
+Antdesign
+chakra ui
+
+
+
+css framework
+-----------------
+tailwind is ths css library to make beautiful css without writing our own css
+npm install -D tailwindcss postcss
+ |
+ -> tailwindcss is normal css library.
+ -> postcss is transforming css into javascript.
+ -> Parcel is a javascript bundler that use postcss to undersatnd tailwind.
+ -> From now on we can remove the css files and add tailwind classes to reshape the ui.
+ 
+ if we want to add hard coded value like width to 200px we can use w-[200px]
+ if we are not getting suggestions in vs code we can use ctrl + spacebar
+ dynamic styling using tailwind ->  
+ Media queries ->
+
+

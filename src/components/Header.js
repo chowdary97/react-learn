@@ -3,14 +3,13 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 
 export function Header() {
-  console.log("refreshing the page")
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="Restaurant Logo" />
+    <div className="flex justify-between bg-blue-400 shadow-lg m-3 p-4 sm:bg-green-300 ">
+      <div className="w-24">
+        <img className="logo"  src={LOGO_URL} alt="Restaurant Logo" />
       </div>
-      <div className="nav-container">
-        <ul className="nav-list">
+      <div className="flex items-center">
+        <ul className="flex gap-2">
           <li className="nav-item">
             <Link to="/">Home</Link>
           </li>

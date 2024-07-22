@@ -3,14 +3,14 @@ import { RestrauntCard } from "../components";
 import "./Body.css";
 import { Shimmer } from "../components";
 import { Link } from "react-router-dom";
-import useOnlineStatus from '../utils/hooks/useOnlineStatus';
+import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 
 function Body() {
   const [originalList, setOriginalList] = useState([]);
   const [filteredList, setFilteredList] = useState(originalList);
   const [searchText, setSearchText] = useState("");
 
-  const onlineStatus = useOnlineStatus()
+  const onlineStatus = useOnlineStatus();
   function onButtonClick() {
     setFilteredList(data.filter((item) => item.Rating == 1));
   }
@@ -63,29 +63,33 @@ function Body() {
     setOriginalList(restaurantsList);
   }
 
-  if(!onlineStatus) return <h1>It looks like your offline, Please check your Internet connection</h1>
+  if (!onlineStatus)
+    return (
+      <h1>It looks like your offline, Please check your Internet connection</h1>
+    );
 
   return filteredList.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="flex gap-3 m-4">
           <input
+            className="border border-solid border-black border-r-3 focus:bg-green-700"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="Search for Restraunts"
           />
-          <button className="search" onClick={() => {}}>
+          <button className="bg-green-100 px-4 py-2 rounded-md" onClick={() => {}}>
             Search
           </button>
+          <button onClick={onButtonClick} className="bg-gray-100 px-4 py-2 rounded-md">
+            Top Rated Restraunts
+          </button>
         </div>
-        <button onClick={onButtonClick} className="filter-btn">
-          Top Rated Restraunts
-        </button>
       </div>
-      <div className="restraunt-container">
+      <div className="m-4 flex flex-wrap">
         {filteredList.map((item, index) => (
           <Link to={"/restaurant/" + item.id} key={item.id}>
             <RestrauntCard data={item} />

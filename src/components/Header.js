@@ -1,12 +1,16 @@
 import "./header.css";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import  UserContext  from "../utils/context/UserContext";
 
 export function Header() {
+  const data = useContext(UserContext);
+  console.log(data,"data here")
   return (
     <div className="flex justify-between bg-blue-400 shadow-lg m-3 p-4 sm:bg-green-300 ">
       <div className="w-24">
-        <img className="logo"  src={LOGO_URL} alt="Restaurant Logo" />
+        <img className="logo" src={LOGO_URL} alt="Restaurant Logo" />
       </div>
       <div className="flex items-center">
         <ul className="flex gap-2">

@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { RestrauntCard } from "../components";
 import "./Body.css";
 import { Shimmer } from "../components";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import { withPromoted } from "../components/RestrauntCard.js";
 
 function Body() {
   const [originalList, setOriginalList] = useState([]);
   const [filteredList, setFilteredList] = useState(originalList);
   const [searchText, setSearchText] = useState("");
+  const RestrauntCardPromoted = withPromoted(RestrauntCard);
 
   const onlineStatus = useOnlineStatus();
   function onButtonClick() {
@@ -39,7 +41,7 @@ function Body() {
     // Access the cards array
     const cards = parsedData.data.cards;
     let restaurantsList = [];
-    cards.forEach((card) => {
+    cards.forEach((card, index) => {
       if (card.card.card.id === "top_brands_for_you") {
         const restaurants =
           card.card.card.gridElements.infoWithStyle.restaurants;
@@ -53,6 +55,7 @@ function Body() {
             Cuisines: info.cuisines,
             CostForTwo: info.costForTwo,
             CloudinaryImageId: info.cloudinaryImageId,
+            promoted: true,
           };
           restaurantsList.push(obj);
         });
@@ -81,10 +84,16 @@ function Body() {
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="Search for Restraunts"
           />
-          <button className="bg-green-100 px-4 py-2 rounded-md" onClick={() => {}}>
+          <button
+            className="bg-green-100 px-4 py-2 rounded-md"
+            onClick={() => {}}
+          >
             Search
           </button>
-          <button onClick={onButtonClick} className="bg-gray-100 px-4 py-2 rounded-md">
+          <button
+            onClick={onButtonClick}
+            className="bg-gray-100 px-4 py-2 rounded-md"
+          >
             Top Rated Restraunts
           </button>
         </div>
@@ -92,7 +101,11 @@ function Body() {
       <div className="m-4 flex flex-wrap">
         {filteredList.map((item, index) => (
           <Link to={"/restaurant/" + item.id} key={item.id}>
-            <RestrauntCard data={item} />
+            {index == 0 || (index == 2 && item.promoted) ? (
+              <RestrauntCardPromoted data={item} />
+            ) : (
+              <RestrauntCard data={item} />
+            )}
           </Link>
         ))}
       </div>

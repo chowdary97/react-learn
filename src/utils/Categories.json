@@ -1,0 +1,169 @@
+{
+    "categories": [
+      {
+        "title": "Recommended",
+        "menu": [
+          {
+            "title": "Chicken Wings",
+            "price": 9.99,
+            "description": "Crispy fried wings tossed in your choice of sauce, served with celery and ranch."
+          },
+          {
+            "title": "BBQ Ribs",
+            "price": 12.99,
+            "description": "Tender pork ribs smothered in smoky BBQ sauce, served with coleslaw and fries."
+          },
+          {
+            "title": "Nachos",
+            "price": 8.99,
+            "description": "Tortilla chips loaded with cheese, jalapenos, sour cream, and salsa."
+          },
+          {
+            "title": "Sliders",
+            "price": 10.99,
+            "description": "Mini burgers topped with cheese, pickles, and a special sauce."
+          },
+          {
+            "title": "Stuffed Jalapenos",
+            "price": 7.99,
+            "description": "Jalapenos filled with cream cheese and wrapped in bacon."
+          },
+          {
+            "title": "Fried Pickles",
+            "price": 6.99,
+            "description": "Crispy dill pickles served with a side of ranch dressing."
+          },
+          {
+            "title": "Quesadilla",
+            "price": 8.99,
+            "description": "Grilled tortilla stuffed with cheese and your choice of chicken or beef, served with salsa and sour cream."
+          },
+          {
+            "title": "Buffalo Shrimp",
+            "price": 11.99,
+            "description": "Shrimp fried to perfection and tossed in buffalo sauce, served with celery and ranch."
+          },
+          {
+            "title": "Onion Rings",
+            "price": 5.99,
+            "description": "Crispy, golden onion rings served with a tangy dipping sauce."
+          },
+          {
+            "title": "Spinach Artichoke Dip",
+            "price": 9.49,
+            "description": "A creamy blend of spinach, artichokes, and cheeses, served with tortilla chips."
+          }
+        ]
+      },
+      {
+        "title": "Appetizers",
+        "menu": [
+          {
+            "title": "Mozzarella Sticks",
+            "price": 6.99,
+            "description": "Breaded and fried mozzarella sticks served with marinara sauce."
+          },
+          {
+            "title": "Garlic Bread",
+            "price": 4.99,
+            "description": "Toasted bread topped with garlic butter and parsley."
+          },
+          {
+            "title": "Stuffed Mushrooms",
+            "price": 8.99,
+            "description": "Mushrooms filled with a savory blend of cheeses and herbs."
+          },
+          {
+            "title": "Bruschetta",
+            "price": 7.49,
+            "description": "Toasted bread topped with a mixture of tomatoes, basil, and garlic."
+          },
+          {
+            "title": "Shrimp Cocktail",
+            "price": 12.99,
+            "description": "Chilled shrimp served with a tangy cocktail sauce."
+          },
+          {
+            "title": "Potato Skins",
+            "price": 7.99,
+            "description": "Potato halves topped with cheese, bacon, and green onions, served with sour cream."
+          },
+          {
+            "title": "Fried Calamari",
+            "price": 10.99,
+            "description": "Lightly breaded and fried calamari, served with marinara sauce."
+          },
+          {
+            "title": "Cheese Fries",
+            "price": 6.99,
+            "description": "Fries smothered in melted cheese and topped with bacon bits."
+          },
+          {
+            "title": "Spring Rolls",
+            "price": 5.99,
+            "description": "Crispy rolls filled with vegetables and served with a sweet chili sauce."
+          },
+          {
+            "title": "Bacon Wrapped Dates",
+            "price": 9.99,
+            "description": "Sweet dates wrapped in crispy bacon, drizzled with balsamic glaze."
+          }
+        ]
+      },
+      {
+        "title": "Main Course",
+        "menu": [
+          {
+            "title": "Grilled Salmon",
+            "price": 14.99,
+            "description": "Fresh salmon fillet grilled to perfection, served with rice and vegetables."
+          },
+          {
+            "title": "Ribeye Steak",
+            "price": 19.99,
+            "description": "Juicy ribeye steak cooked to your liking, served with mashed potatoes and a side salad."
+          },
+          {
+            "title": "Chicken Alfredo",
+            "price": 13.99,
+            "description": "Creamy Alfredo sauce over fettuccine noodles, topped with grilled chicken."
+          },
+          {
+            "title": "Beef Tacos",
+            "price": 12.99,
+            "description": "Soft tortillas filled with seasoned beef, lettuce, cheese, and salsa."
+          },
+          {
+            "title": "Spaghetti Carbonara",
+            "price": 11.99,
+            "description": "Spaghetti tossed in a creamy sauce with bacon, Parmesan, and peas."
+          },
+          {
+            "title": "Fish and Chips",
+            "price": 15.99,
+            "description": "Beer-battered fish served with crispy fries and tartar sauce."
+          },
+          {
+            "title": "Vegetable Stir Fry",
+            "price": 10.99,
+            "description": "A medley of vegetables stir-fried in a savory sauce, served with rice."
+          },
+          {
+            "title": "Lamb Chops",
+            "price": 22.99,
+            "description": "Grilled lamb chops served with mint jelly and roasted potatoes."
+          },
+          {
+            "title": "Chicken Parmesan",
+            "price": 14.99,
+            "description": "Breaded chicken breast topped with marinara sauce and mozzarella, served with spaghetti."
+          },
+          {
+            "title": "BBQ Pulled Pork Sandwich",
+            "price": 11.99,
+            "description": "Slow-cooked pulled pork in BBQ sauce, served on a bun with coleslaw."
+          }
+        ]
+      }
+    ]
+  }

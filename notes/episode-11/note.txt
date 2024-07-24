@@ -1,0 +1,66 @@
+Episode - 11
+========================
+Higher Order Component(HOC)
+-----------------------------
+It is a function that takes a Component and returns a Component.
+-> It takes an existing Component and adds some code and returns it.
+-> ex: in swiggy app it shows some cards as promoted.
+       all cards are similars so it takes a card component and adds promoted and enhances it and return that enhanced card
+-> without affecting other functionality in cards we use this hoc to enhance the component.
+
+
+Controlled & UnControlled Components
+------------------------------------------
+to control the components we need to lift up the state
+lefting up the state of a variable from child to parent.
+
+
+
+
+React chrome extension
+----------------------------------
+
+
+
+
+Props Drilling
+-----------------------------
+passing props from parent to the indepth child is props drilling.
+
+
+React Context
+----------------------
+To avoid props drilling we need to react Context
+this context in react makes the data available globally without props drilling we can access the data directly.
+
+what kind of data we can store in context 
+|
+-> LoggedIn user
+-> maintaining theme 
+-> maintaining cart
+
+we have to use only two things
+createContext
+useContext
+
+create a context using createContext
+   ex: import { createContext } from "react";
+
+        const UserContext = createContext({
+            loggedInUser: "Thimma Chowdary"
+        })
+        export default UserContext;
+use this UserContext by using useContext and import 
+   ex: const user = useContext(UserContext);
+
+* In Classbased compnents we use UserContext.Consumer to access the global data
+* We can use UserContext.Consumer can be used any time and anywhere
+
+Difference b/w Context and Redux
+  Redux is a statement management library which is not in react;
+
+
+
+
+
+

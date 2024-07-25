@@ -1,0 +1,53 @@
+Episode -12
+===================
+Redux
+-------------
+React and Redux are different libraries.
+Other libraries to maintain the state management
+ -> Zustand
+
+ * Redux offers two libraries 
+   -> React-Redux (It is kind of bridge between react and redux)
+   -> Redux Toolkit (newer way of redux)
+
+ * Redux "STORE" is a big object that is kept in global central place, where every component can access that object in entire application.
+ * We have a "SLICES" to main the store logically partition to read easily.
+ * We can create n number of slices from a single store.
+   Ex: themeSlice, cartSlice, authSlice etc... 
+ * Redux says we can't directly modify the data from ui to slice.
+   -> We should disptach an action
+   -> action contains data and function 
+   -> this function modifies the data from slice.
+      ex: (add to cart button) -> disptach an action -> the function addes the data to the cart.
+   -> this function is known as "REDUCER".
+   -> reducer is a hook that take accumulator and a function to update the accumulator.
+ * To Read data from the store we use "SELECTOR".
+ * This phenemon is know as subscribing to the store. whenever the changes are happened in the store it updates to the ui.
+
+ Installing
+ ---------------------
+ npm install @reduxjs/toolkit
+ npm install react-redux 
+
+ * Build a store
+ * Connect store to app
+ * create slices
+ * disptach(action)
+ * selector (to subscribe to ui)
+
+* Reducers -> combining small reducers into single reducer 
+* ConfigureStore contains an object which contains reducers.
+* In Redux toolkit we can directly mutate state, that means we can directly update the state earlier we can't update the state we need to make a copy and update.
+* Redux uses Immer(is a library) that works with immutability.
+* Immer does like (takes Existing state) -> (New State) -> (Gives Diff of the state)
+* we have redux dev tools to help us while developing app with redux
+* immutability is achieved using pure functions
+* mutability is achieved using impure functions.
+* return is also not manditory in redux toolkit.
+
+RTK Query (Asynchronous operations in redux)
+------------------------------------------------
+we can make async operations using rtk query 
+crate an api slice, add the api slice inside the store to make it available throught the application.
+to retrieve the data from api we need to use builder.query  (GET requests).
+to update the data to api we need to use builder.mutation (POST, PUT, PATCH, DELETE requests).

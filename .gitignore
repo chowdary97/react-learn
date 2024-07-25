@@ -2,4 +2,6 @@
 dist
 .parcel-cache
 
+/src/server/node_modules
+
 # All the files which can be rebuild should not be pushed

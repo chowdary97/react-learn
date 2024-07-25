@@ -5,12 +5,28 @@ import { Shimmer } from "../components";
 import { json, Link } from "react-router-dom";
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 import { withPromoted } from "../components/RestrauntCard.js";
+import { useGetUsersQuery } from "../utils/redux/api/apiSlice.js";
 
 function Body() {
   const [originalList, setOriginalList] = useState([]);
   const [filteredList, setFilteredList] = useState(originalList);
   const [searchText, setSearchText] = useState("");
   const RestrauntCardPromoted = withPromoted(RestrauntCard);
+
+  const {
+    data: users,
+    isLoading,
+    isError,
+    isSuccess,
+    error,
+  } = useGetUsersQuery();
+
+  console.log(
+    "isLoading :" + isLoading,
+    "isError :" + isError,
+    "isSuccess :" + isSuccess,
+    "error: " + JSON.stringify(error)
+  );
 
   const onlineStatus = useOnlineStatus();
   function onButtonClick() {
@@ -66,10 +82,24 @@ function Body() {
     setOriginalList(restaurantsList);
   }
 
+  if (isError) {
+    if (error.status === 404) {
+      return <div>User not found.</div>;
+    }
+
+    if (error.status === 500) {
+      return <div>Server error. Please try again later.</div>;
+    }
+
+    return <div>Error: {error.error}</div>;
+  }
+
   if (!onlineStatus)
     return (
       <h1>It looks like your offline, Please check your Internet connection</h1>
     );
+
+  if (isLoading) return <h1>Loading Please wait!!!!!!!</h1>;
 
   return filteredList.length === 0 ? (
     <Shimmer />
@@ -97,6 +127,9 @@ function Body() {
             Top Rated Restraunts
           </button>
         </div>
+      </div>
+      <div className="m-4 flex flex-wrap">
+        {users && users.map((user) => <div>{user.name}</div>)}
       </div>
       <div className="m-4 flex flex-wrap">
         {filteredList.map((item, index) => (

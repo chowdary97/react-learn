@@ -1,0 +1,15 @@
+{
+    "id": "658841",
+    "RestrauntName": "La Pino'z Pizza",
+    "Rating": 4.2,
+    "Cuisines": [
+        "Pizzas",
+        "Pastas",
+        "Italian",
+        "Desserts",
+        "Beverages"
+    ],
+    "CostForTwo": "₹400 for two",
+    "CloudinaryImageId": "d20fdc8c86aa8bd0638f47dd013d46f9",
+    "promoted": true
+}

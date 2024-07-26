@@ -1,14 +1,14 @@
 import "./header.css";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import UserContext from "../utils/context/UserContext";
 import { useSelector } from "react-redux";
 
 export function Header() {
   const data = useContext(UserContext);
   const cart = useSelector((state) => state.cart.items);
-  console.log(cart)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="flex justify-between bg-blue-400 shadow-lg m-3 p-4 sm:bg-green-300 ">
       <div className="w-24">
@@ -30,6 +30,15 @@ export function Header() {
           </li>
           <li className="nav-item">
             <Link to="/cart">Cart{cart.length}</Link>
+          </li>
+          <li className="nav-item">
+            <button
+              onClick={() => {
+                setIsLoggedIn(!isLoggedIn);
+              }}
+            >
+              {isLoggedIn ? "Logout" : "Login"}
+            </button>
           </li>
         </ul>
       </div>

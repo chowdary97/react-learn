@@ -77,22 +77,22 @@ function Body() {
         });
       }
     });
-
+    console.log(restaurantsList,"========");
     setFilteredList(restaurantsList);
     setOriginalList(restaurantsList);
   }
 
-  if (isError) {
-    if (error.status === 404) {
-      return <div>User not found.</div>;
-    }
+  // if (isError) {
+  //   if (error.status === 404) {
+  //     return <div>User not found.</div>;
+  //   }
 
-    if (error.status === 500) {
-      return <div>Server error. Please try again later.</div>;
-    }
+  //   if (error.status === 500) {
+  //     return <div>Server error. Please try again later.</div>;
+  //   }
 
-    return <div>Error: {error.error}</div>;
-  }
+  //   return <div>Error: {error.error}</div>;
+  // }
 
   if (!onlineStatus)
     return (

@@ -1,0 +1,144 @@
+Episode - 13
+==================
+
+Testing
+------------
+* Changing the functionality of one component may affect other components.
+* Testing can be done in two ways:
+   -> Manual Testing
+   -> Writing code to test(Autmotate test)
+
+Automate Testing
+------------------
+* types of Testing by developer
+  -> Unit Testing
+  -> Integration Testing
+  -> End to End(E2E) Testing
+
+Unit Testing
+----------------
+* Test components in isolation
+    ex: testing only small portion of the application or testing a particular component.
+
+Integration Testing
+-----------------------
+* Testing multiple components at a time
+    ex: if we type anything in search it effetcs so many components
+
+End to End Testing
+----------------------
+* Testing all the functionality through the application 
+    ex: opening the site to the closing the site.
+
+Libraries required to test
+--------------------------------
+1. React Testing Library
+   npm install --save-dev @testing-library/react
+
+   * This library is built on top of DOM testing library.
+   * react testing library uses jest library.
+   * jest uses babel library.
+   * install jest
+       npm install --save-dev jest 
+   * install babel 
+       npm install --save-dev babel-jest @babel/core @babel/preset-env
+   * configure babel 
+     -----------------------
+     we are using parcel to bundle behind the scenes parcel uses babel 
+     now we are installing babel as seperate dependency it may conflict with the babel in parcel 
+     to resolve issue we need to create .parcelrc file and configure the babel not to conflict.
+   * configure jest
+     ---------------------
+     npx jest --init 
+         Would you like to use Typescript for the configuration file? ... no
+        √ Choose the test environment that will be used for testing » node
+        √ Do you want Jest to add coverage reports? ... yes
+        √ Which provider should be used to instrument code for coverage? » babel
+        √ Automatically clear mock calls, instances, contexts and results before every test? ... yes
+   * Install JSDOM
+     ----------------
+     if jest > 28 version jsdom should be installed seperatly.
+     npm i -D jest-environment-jsdom
+
+* If we crate __tests__ file inside the files those will traked by testing library.
+* or if any file is Header.test.js or Header.spec.js or Header.spec.ts or Header.spec.ts will be consildered as testing file.
+* __ is know as dunder test (double underscore)
+* 
+Small test case 
+--------------------
+sum.test.js file
+
+import { sum } from "../sum";
+
+test("Sum function should calculate sum of two numbers", () => {
+  const result = sum(3, 4);
+
+  // assertion
+  expect(result).toBe(7);
+});
+
+
+* Install @babel/preset-react library make jsx work in test cases
+* Include @babel/preset-react in babel.config.js
+     ["@babel/preset-react", { runtime: "automatic" }], add this in babel.config.js
+* It helps to convert jsx code to html code 
+* Install @testing-library/jest-dom
+* add this in "testEnvironment: 'jsdom'," jest.config.js file
+* there are many ways to identify elements in test file
+   ex: screen.getByRole("heading")
+       screen.getByText("Contact Us page")
+
+       it passes these two test cases
+       but if we write random text which is not in document it fails the test case
+* Querying in test cases
+  |
+  -> if we are trying to check for multiple we need to use
+     ex: if we are trying to get multiple textboxes we need to get by const inputboxes = screen.getAllByRole('textbox');
+         if we are trying to get single textbox we need to use const inputbox = screen.getByRole('textbox')
+         the difference is just "All"
+
+* Every test cases must be written like 
+  render 
+  query 
+  assert 
+
+* multiple test cases can be grouped into single test cases is called describe
+  check contact.js page to check describe.
+
+* test can also be written like 'it'
+
+
+Testing Redux used component 
+------------------------------------
+when we write test for Header which contains redux so here when we just render a Header component it fails 
+because the component uses Redux which cannot be tested in isolation 
+so we need to prove store to a component.
+check Header.test.js for more
+
+Testing Router Link
+-------------------------
+It again failed because we are using Link component which is not from react library it is from react-router-dom
+we should provide router to the component in test file.
+
+Testing passing props through component
+----------------------------------------------
+create a mock data and imort it into the testable file
+in render pass mock data as well through props
+
+Testing HOC 
+-----------------
+same like creating a Hoc(higher order component) create a hoc in testing file and do remaining same like normal testing file 
+check Restrauntcard.test.js file for reference.
+
+
+Integration Testing
+--------------------------
+changing one thing affects other components testing these components is know as integratin testing.
+
+when we test a component which has api call it fails because the javascript don't know the api call(fetch)
+we need to mock the api call to make test case pass
+refer to search.test.js file for reference.
+
+
+
+
